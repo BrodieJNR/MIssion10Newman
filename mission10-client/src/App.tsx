@@ -1,31 +1,20 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import type { Bowler } from "./models/Bowler";
 import BowlerHeading from "./components/BowlerHeading";
 import BowlerTable from "./components/BowlerTable";
-import { Bowler } from "./models/Bowler";
-import "./App.css";
 
 function App() {
   const [bowlers, setBowlers] = useState<Bowler[]>([]);
 
   useEffect(() => {
-    const fetchBowlers = async () => {
-      try {
-        const response = await fetch("http://localhost:5218/api/bowlers");
-        if (!response.ok) {
-          throw new Error("Failed to fetch bowlers");
-        }
-        const data = await response.json();
-        setBowlers(data);
-      } catch (error) {
-        console.error("Error fetching bowlers:", error);
-      }
-    };
-
-    fetchBowlers();
+    fetch("http://localhost:5034/api/bowlers")
+      .then((response) => response.json())
+      .then((data) => setBowlers(data))
+      .catch((error) => console.error("Error fetching bowlers:", error));
   }, []);
 
   return (
-    <div className="App">
+    <div>
       <BowlerHeading />
       <BowlerTable bowlers={bowlers} />
     </div>
