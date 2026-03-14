@@ -1,3 +1,4 @@
+using MIssion10Newman.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<BowlingContext>(options =>
-    options.UseSqlite("Data Source=BowlingLeague.sqlite"));
+    options.UseSqlite($"Data Source={Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "BowlingLeague.sqlite")}"));
 
 builder.Services.AddCors(options =>
 {
