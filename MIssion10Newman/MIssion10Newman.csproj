@@ -7,12 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="mission10-client\src\components\BowlerTable.tsx" />
+    <None Remove="mission10-client\src\components\Heading.tsx" />
+    <None Remove="mission10-client\src\models\Bowler.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="mission10-client\src\components\BowlerTable.tsx" />
+    <TypeScriptCompile Include="mission10-client\src\components\Heading.tsx" />
+    <TypeScriptCompile Include="mission10-client\src\models\Bowler.ts" />
   </ItemGroup>
 
 </Project>
