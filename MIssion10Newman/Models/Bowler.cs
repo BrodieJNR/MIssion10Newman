@@ -1,19 +1,18 @@
-﻿
-namespace MIssion10Newman.Models
+﻿namespace MIssion10Newman.Models
 {
     public class Bowler
     {
         public int BowlerId { get; set; }
-        public string BowlerFirstName { get; set; } = string.Empty;
+        public string? BowlerFirstName { get; set; }
         public string? BowlerMiddleInit { get; set; }
-        public string BowlerLastName { get; set; } = string.Empty;
-        public string BowlerAddress { get; set; } = string.Empty;
-        public string BowlerCity { get; set; } = string.Empty;
-        public string BowlerState { get; set; } = string.Empty;
-        public string BowlerZip { get; set; } = string.Empty;
-        public string BowlerPhoneNumber { get; set; } = string.Empty;
+        public string? BowlerLastName { get; set; }
+        public string? BowlerAddress { get; set; }
+        public string? BowlerCity { get; set; }
+        public string? BowlerState { get; set; }
+        public string? BowlerZip { get; set; }
+        public string? BowlerPhoneNumber { get; set; }
+        public int? TeamId { get; set; }
 
-        public int TeamId { get; set; }
-        public Team Team { get; set; } = null!;
+        public Team? Team { get; set; }
     }
 }
