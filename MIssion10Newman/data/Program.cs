@@ -1,10 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using MIssion10Newman.Models; // adjust to your namespace
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Add DbContext here
+builder.Services.AddDbContext<BowlingLeagueContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("BowlingConnection")));
 
 var app = builder.Build();
 
