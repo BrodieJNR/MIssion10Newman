@@ -21,12 +21,12 @@ export default function BowlerTable({ bowlers }: Props) {
         </tr>
       </thead>
       <tbody>
-        {bowlers.map((bowler) => (
-          <tr key={bowler.bowlerId}>
+        {bowlers.map((bowler, index) => (
+          <tr key={index}>
             <td>{bowler.bowlerFirstName}</td>
             <td>{bowler.bowlerMiddleInit}</td>
             <td>{bowler.bowlerLastName}</td>
-            <td>{bowler.team.teamName}</td>
+            <td>{bowler.teamName}</td>
             <td>{bowler.bowlerAddress}</td>
             <td>{bowler.bowlerCity}</td>
             <td>{bowler.bowlerState}</td>
@@ -38,3 +38,4 @@ export default function BowlerTable({ bowlers }: Props) {
     </table>
   );
 }
+
