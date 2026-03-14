@@ -1,12 +1,16 @@
 ﻿export interface Bowler {
-    bowlerId: number;
-    firstName: string;
-    middleInit?: string | null;
-    lastName: string;
+  bowlerId: number;
+  bowlerFirstName: string;
+  bowlerMiddleInit: string;
+  bowlerLastName: string;
+  bowlerAddress: string;
+  bowlerCity: string;
+  bowlerState: string;
+  bowlerZip: string;
+  bowlerPhoneNumber: string;
+  teamId: number;
+  team: {
+    teamId: number;
     teamName: string;
-    address: string;
-    city: string;
-    state: string;
-    zip: string;
-    phoneNumber: string;
+  };
 }
